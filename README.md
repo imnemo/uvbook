@@ -12,14 +12,15 @@ An Introduction to libuv
 
 ## 编译示例代码
 ### 编译libuv源码
-在`code/Makefile`里`make all`，可以看到编译时命令是`gcc $(CFLAGS) -o $$dir main.c $(UV_LIB) $(LIBS);`
-`$(CFLAGS)`变量的值为`CFLAGS=-g -Wall -I$(UV_PATH)/include`，会包含`UV_PATH即libuv`目录下的`include`，这个
-在源码目录`libuv`下已经有了
-`$(UV_LIB)`变量值为`UV_LIB=$(UV_PATH)/.libs/libuv.a`，这是静态库，需要编译下`libuv`源码才会生成。因此，我
-们先来把`libuv`源码编译了。关于什么是静态库，可以参考[linux下的o、a、so、la、lo文件](./reference/linux下的o、a、so、la、lo文件.md)
+在`code/Makefile`里`make all`，可以看到编译时命令是`gcc $(CFLAGS) -o $$dir main.c $(UV_LIB) $(LIBS);`  
+$(CFLAGS)变量的值为`CFLAGS=-g -Wall -I$(UV_PATH)/include`，会包含`UV_PATH即libuv`目录下的`include`，这个
+在源码目录`libuv`下已经有了  
+$(UV_LIB)变量值为`UV_LIB=$(UV_PATH)/.libs/libuv.a`，这是静态库，需要编译下`libuv`源码才会生成。  
+因此，我们先来把`libuv`源码编译了。  
+关于什么是静态库，可以参考[linux下的o、a、so、la、lo文件](./reference/linux下的o、a、so、la、lo文件.md)
 #### 准备工作
-[源码下README](./libuv/README.md#build-instructions)文件里，对编译过程和方式写的很详细
-两种方式，一种是`autotool`，一种是`gyp`。`gyp`的方式，还可以生成mac下`xcode`工程相关文件。
+[源码下README](./libuv/README.md#build-instructions)文件里，对编译过程和方式写的很详细  
+两种方式，一种是`autotool`，一种是`gyp`。`gyp`的方式，还可以生成mac下`xcode`工程相关文件。  
 先看`autotool`，使用brew安装就好：
 
 ```shell
@@ -48,7 +49,7 @@ make all
 ### 安装工具
 文档是`.rst`文件，即`reStructuredText`，构建工具是`sphinx-build`
 #### 安装sphinx-build
-参考[官网](http://www.sphinx-doc.org/en/1.5.1/index.html)，当前版本是`1.5.1`，[install page](http://www.sphinx-doc.org/en/1.5.1/install.html)
+参考[官网](http://www.sphinx-doc.org/en/1.5.1/index.html)，当前版本是`1.5.1`，[install page](http://www.sphinx-doc.org/en/1.5.1/install.html)  
 可以通过`pip`来安装：
 
 ```shell
@@ -68,7 +69,8 @@ $ sudo port select --set sphinx py27-sphinx
 安装`MacPorts`的话，参见[官网](https://www.macports.org/install.php)，直接下载对应系统的安装包
 
 #### 安装LaTeX
-导出PDF需要。[官网](https://www.latex-project.org/)介绍`LaTeX`是科学文档的事实标准。安装参见[install](https://www.latex-project.org/get/)
+导出PDF需要。[官网](https://www.latex-project.org/)介绍`LaTeX`是科学文档的事实标准。  
+安装参见[install](https://www.latex-project.org/get/)  
 mac下，应该安装的是[MacTex](http://www.tug.org/mactex/index.html)。可以选择[最小化安装](http://www.tug.org/mactex/morepackages.html)
 
 ### 编译
